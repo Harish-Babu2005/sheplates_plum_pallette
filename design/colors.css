@@ -1,0 +1,50 @@
+/*
+ * ShePlates colour palette (reference copy).
+ * The app reads these values from the :root block at the top of app/theme-2.css; keep the two in step.
+ * Fonts: Outfit (400 to 800). Corners: pill buttons, 24px cards. Flat surfaces, no shadows on cards.
+ */
+:root {
+  /* Brand (names kept from the first kit so the code did not need renaming) */
+  --o: #753b50;          /* primary plum: buttons, active tabs, highlights */
+  --o-d: #602d40;        /* plum, hover and pressed */
+  --o-t: #f7edf0;        /* plum tint: selected cards, soft badges */
+  --o-t2: #e8cbd5;       /* stronger tint: chart bars, soft fills, brand colour on dark panels */
+  --ot: #653046;         /* plum used as text on a tint */
+  --on-brand: #ffffff;   /* text and icons on a solid plum surface */
+
+  /* Text */
+  --ink: #292124;        /* headings, dark buttons */
+  --ink-2: #4c4246;      /* body text */
+  --mut: #71676b;        /* secondary text and captions */
+  --ph: #766b70;         /* placeholders */
+  --dis: #b9afb3;        /* disabled */
+
+  /* Surfaces and lines */
+  --white: #ffffff;      /* cards, page background */
+  --surf: #faf6f4;       /* warm surface: inputs, table rows, app background */
+  --surf-2: #f0e8e7;     /* darker surface: pressed state, dividers */
+  --line: #e8dfe1;       /* borders and separators */
+
+  /* Status */
+  --ok: #26834a;
+  --ok-t: #21683b;
+  --ok-bg: #eaf5ec;
+  --warn-t: #795900;
+  --warn-bg: #fff4cf;
+  --bad-t: #b42332;
+  --bad-bg: #fdecef;
+  --info: #285fba;
+  --info-bg: #edf3fd;
+
+  /* Dark panels (staff sidebar, dark cards) */
+  --sidebar: #292124;
+  --sidebar-accent: #382d32;
+  --sidebar-border: #4a3b42;
+
+  /* Chart series, in order */
+  --chart-1: #753b50;
+  --chart-2: #7f9a6a;    /* lightened from #526044 so it reads apart from plum */
+  --chart-3: #285fba;
+  --chart-4: #b77b48;
+  --chart-5: #8271a5;
+}

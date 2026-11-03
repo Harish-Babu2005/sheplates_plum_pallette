@@ -1,0 +1,672 @@
+/*
+ * ShePlates 2.0 theme (Delifood kit): Outfit, orange #753b50 with dark text, flat surfaces, pill controls.
+ * Loaded last, so it re-points every earlier colour family (--sp-*, --sp7-*, --sp71-*, --sp72-*) at the new palette
+ * and flattens the older glass, gradient and shadow treatments. One look for all four roles.
+ */
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/Outfit-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root,
+html.theme-customer {
+  --on-brand: #ffffff;
+  --o: #753b50;
+  --o-d: #602d40;
+  --o-t: #f7edf0;
+  --o-t2: #e8cbd5;
+  --ot: #653046;
+  --ink: #292124;
+  --ink-2: #4c4246;
+  --mut: #71676b;
+  --ph: #766b70;
+  --dis: #b9afb3;
+  --surf: #faf6f4;
+  --surf-2: #f0e8e7;
+  --line: #e8dfe1;
+  --ok: #26834a;
+  --ok-t: #21683b;
+  --ok-bg: #eaf5ec;
+  --warn-bg: #fff4cf;
+  --warn-t: #795900;
+  --bad-t: #b42332;
+  --bad-bg: #fdecef;
+  --info: #285fba;
+  --info-bg: #edf3fd;
+
+  --background: #ffffff;
+  --foreground: #292124;
+  --card: #ffffff;
+  --card-foreground: #292124;
+  --popover: #ffffff;
+  --popover-foreground: #292124;
+  --primary: #753b50;
+  --primary-foreground: #ffffff;
+  --secondary: #faf6f4;
+  --secondary-foreground: #292124;
+  --muted: #faf6f4;
+  --muted-foreground: #71676b;
+  --accent: #f7edf0;
+  --accent-foreground: #292124;
+  --destructive: #b42332;
+  --border: #e8dfe1;
+  --input: #e8dfe1;
+  --ring: #753b50;
+  --chart-1: #753b50;
+  --chart-2: #7f9a6a;
+  --chart-3: #285fba;
+  --chart-4: #b77b48;
+  --chart-5: #8271a5;
+  --radius: 1.5rem;
+  --sidebar: #292124;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #753b50;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #382d32;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #4a3b42;
+  --sidebar-ring: #753b50;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --sp-ink: #292124;
+  --sp-ink-soft: #4c4246;
+  --sp-cream: #ffffff;
+  --sp-paper: #ffffff;
+  --sp-green: #753b50;
+  --sp-green-deep: #292124;
+  --sp-green-soft: #f7edf0;
+  --sp-coral: #292124;
+  --sp-coral-soft: #f7edf0;
+  --sp-border: #e8dfe1;
+  --sp-shadow-sm: none;
+  --sp-shadow-md: none;
+  --sp-shadow-lg: 0 18px 48px rgba(41, 33, 36, 0.14);
+
+  --sp7-orange: #753b50;
+  --sp7-orange-strong: #602d40;
+  --sp7-orange-soft: #f7edf0;
+  --sp7-green: #753b50;
+  --sp7-green-soft: #f7edf0;
+  --sp7-ink: #292124;
+  --sp7-ink-2: #4c4246;
+  --sp7-muted: #71676b;
+  --sp7-bg: #ffffff;
+  --sp7-paper: #ffffff;
+  --sp7-line: #e8dfe1;
+  --sp7-line-strong: #e8dfe1;
+  --sp7-shadow-1: none;
+  --sp7-shadow-2: none;
+  --sp7-shadow-3: 0 18px 48px rgba(41, 33, 36, 0.14);
+
+  --sp71-glass: #ffffff;
+  --sp71-glass-strong: #ffffff;
+  --sp71-glass-soft: #faf6f4;
+  --sp71-glass-dark: #292124;
+  --sp71-hairline: #e8dfe1;
+  --sp71-line: #e8dfe1;
+  --sp71-shadow: none;
+  --sp71-shadow-float: 0 18px 48px rgba(41, 33, 36, 0.14);
+  --sp71-blur: 0px;
+
+  --sp72-green: #753b50;
+  --sp72-green-strong: #602d40;
+  --sp72-green-soft: #f7edf0;
+  --sp72-lime: #e8cbd5;
+  --sp72-ink: #292124;
+  --sp72-muted: #71676b;
+  --sp72-paper: #ffffff;
+  --sp72-bg: #ffffff;
+  --sp72-line: #e8dfe1;
+  --sp72-shadow-sm: none;
+  --sp72-shadow-md: none;
+  --sp72-shadow-lg: 0 18px 48px rgba(41, 33, 36, 0.14);
+}
+
+@theme inline {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html body {
+  font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #292124;
+}
+html body * {
+  font-family: inherit;
+}
+html body .font-mono,
+html body code,
+html body pre,
+html body kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+html ::selection {
+  background: #e8cbd5;
+  color: #292124;
+}
+
+/* ---- page grounds: flat, no glow ---- */
+html .app-shell-bg,
+html .sp-v7.app-shell-bg,
+html .sp-entry.app-shell-bg,
+html.theme-customer .app-shell-bg,
+html.theme-customer .sp-v7.app-shell-bg,
+html.theme-customer .sp-entry.app-shell-bg {
+  background: #ffffff;
+}
+html body,
+html.theme-customer body {
+  background: #ffffff;
+}
+
+/* ---- surfaces: flat cards, 24px radius, hairline instead of shadow ---- */
+html .surface-card,
+html .sp-v7 .surface-card,
+html.theme-customer .sp-v7 .surface-card {
+  border: 0 !important;
+  background: #faf6f4 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+html .surface-card-muted,
+html .sp-v7 .surface-card-muted,
+html.theme-customer .sp-v7 .surface-card-muted {
+  border: 0 !important;
+  background: #faf6f4 !important;
+  box-shadow: none !important;
+}
+html .glass,
+html .sp-glass {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #e8dfe1 !important;
+}
+html .surface-dark,
+html.theme-customer .surface-dark,
+html .section-hero,
+html.theme-customer .section-hero,
+html .sp-agent-preview .surface-dark,
+html.theme-customer .sp-agent-preview .surface-dark {
+  border: 0;
+  background: #292124 !important;
+  box-shadow: none;
+  color: #ffffff;
+}
+html .soft-chip,
+html.theme-customer .soft-chip {
+  border: 0;
+  border-radius: 999px;
+  background: #f7edf0;
+  color: #653046;
+}
+html .food-shadow {
+  box-shadow: none;
+}
+html .brand-grid {
+  background-image: none;
+}
+
+/* ---- header and navigation ---- */
+html .sp-v7 .sp-app-header,
+html.theme-customer .sp-v7 .sp-app-header {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid #e8dfe1 !important;
+  box-shadow: none !important;
+}
+html .nav-shell,
+html.theme-customer .nav-shell,
+html .sp-v7 .sp-portal-sidebar,
+html.theme-customer .sp-v7 .sp-portal-sidebar {
+  background: #292124 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+html .nav-item {
+  color: rgba(255, 255, 255, 0.72);
+  border: 0;
+  border-radius: 999px;
+}
+html .nav-item:hover,
+html .sp-v7 .sp-portal-sidebar .nav-item:hover,
+html.theme-customer .sp-v7 .sp-portal-sidebar .nav-item:hover {
+  background: #382d32 !important;
+  color: #ffffff;
+}
+html .nav-item-active,
+html.theme-customer .nav-item-active,
+html .sp-portal-sidebar .nav-item-active,
+html.theme-customer .sp-portal-sidebar .nav-item-active,
+html .sp-v7 .sp-portal-sidebar .nav-item-active {
+  background: #753b50 !important;
+  color: var(--on-brand) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+html .nav-item-active svg {
+  color: #292124;
+}
+
+/* mobile bottom bar: a floating dark pill, active item in orange */
+html .sp-mobile-bottom-nav,
+html.theme-customer .sp-mobile-bottom-nav,
+html .sp-v7 .sp-mobile-bottom-nav,
+html.theme-customer .sp-v7 .sp-mobile-bottom-nav {
+  background: #292124 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 14px 36px rgba(41, 33, 36, 0.28) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+html .sp-mobile-bottom-nav .sp-nav-agent,
+html.theme-customer .sp-mobile-bottom-nav .sp-nav-agent {
+  background: #753b50 !important;
+  color: var(--on-brand) !important;
+  box-shadow: none !important;
+}
+
+/* ---- inputs: pills on a light-grey ground, orange fill on focus ---- */
+html [data-slot="input"],
+html [data-slot="select-trigger"],
+html .input,
+html .entry-input,
+html .sp-v7 [data-slot="input"],
+html .sp-v7 [data-slot="select-trigger"] {
+  min-height: 48px;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: #faf6f4 !important;
+  color: #292124;
+  box-shadow: none !important;
+  padding-inline: 1.1rem;
+}
+html [data-slot="input"]::placeholder,
+html .input::placeholder,
+html .entry-input::placeholder {
+  color: #766b70;
+}
+html [data-slot="input"]:focus,
+html [data-slot="input"]:focus-visible,
+html [data-slot="select-trigger"]:focus,
+html [data-slot="select-trigger"]:focus-visible,
+html .input:focus,
+html .entry-input:focus,
+html.theme-customer .input:focus,
+html.theme-customer .entry-input:focus,
+html .sp-v7 [data-slot="input"]:focus,
+html .sp-v7 [data-slot="select-trigger"]:focus,
+html.theme-customer .sp-v7 [data-slot="input"]:focus,
+html.theme-customer .sp-v7 [data-slot="select-trigger"]:focus {
+  background: #e8cbd5 !important;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 2px #753b50 !important;
+  outline: none;
+}
+html [data-slot="input"][aria-invalid="true"],
+html [data-slot="select-trigger"][aria-invalid="true"] {
+  box-shadow: inset 0 0 0 2px #b42332 !important;
+}
+html [data-slot="textarea"],
+html .sp-v7 [data-slot="textarea"] {
+  border: 0 !important;
+  border-radius: 24px !important;
+  background: #faf6f4 !important;
+  box-shadow: none !important;
+  padding: 0.9rem 1.1rem;
+}
+html [data-slot="textarea"]:focus,
+html [data-slot="textarea"]:focus-visible {
+  background: #e8cbd5 !important;
+  box-shadow: inset 0 0 0 2px #753b50 !important;
+  outline: none;
+}
+@media (max-width: 767px) {
+  html input,
+  html textarea,
+  html select {
+    color: #292124 !important;
+    background-color: #faf6f4 !important;
+  }
+  html input:focus,
+  html textarea:focus {
+    background-color: #e8cbd5 !important;
+  }
+  html input::placeholder,
+  html textarea::placeholder {
+    color: #766b70 !important;
+  }
+}
+
+/* ---- buttons ---- */
+html [data-slot="button"] {
+  min-height: 44px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: none;
+}
+html [data-slot="button"][data-variant="default"] {
+  background: #753b50;
+  color: var(--on-brand);
+  box-shadow: none;
+}
+html [data-slot="button"][data-variant="default"]:hover {
+  background: #602d40;
+  transform: none;
+  box-shadow: none; color: var(--on-brand); }
+html [data-slot="button"][data-variant="outline"] {
+  background: #ffffff;
+  border: 0;
+  box-shadow: inset 0 0 0 2px #753b50;
+  color: #292124;
+}
+html [data-slot="button"][data-variant="outline"]:hover {
+  background: #f7edf0;
+  transform: none;
+}
+html [data-slot="button"][data-variant="secondary"] {
+  background: #faf6f4;
+  color: #292124;
+}
+html [data-slot="button"][data-variant="secondary"]:hover {
+  background: #f0e8e7;
+}
+html [data-slot="button"][data-variant="ghost"]:hover {
+  background: #faf6f4;
+}
+html [data-slot="button"][data-variant="destructive"] {
+  background: #ffffff;
+  color: #b42332;
+  box-shadow: inset 0 0 0 2px #f0c3c9;
+}
+html [data-slot="button"][data-variant="destructive"]:hover {
+  background: #fdecef;
+}
+html [data-slot="button"][data-variant="link"] {
+  color: #653046;
+}
+html .sp-entry-primary-btn,
+html.theme-customer .sp-entry-primary-btn {
+  background: #753b50 !important;
+  color: var(--on-brand) !important;
+  box-shadow: none !important;
+  border-radius: 999px;
+}
+html .sp-entry-ghost-btn,
+html.theme-customer .sp-entry-ghost-btn {
+  border: 0;
+  background: #faf6f4;
+  border-radius: 999px;
+}
+
+/* focus ring: orange, never green or pink */
+html button:focus-visible,
+html a:focus-visible,
+html [role="button"]:focus-visible,
+html.theme-customer button:focus-visible,
+html.theme-customer a:focus-visible {
+  outline: 3px solid rgba(117, 59, 80, 0.45);
+  outline-offset: 2px;
+}
+
+/* ---- tables ---- */
+html [data-slot="table-container"],
+html .sp-v7 [data-slot="table-container"],
+html.theme-customer .sp-v7 [data-slot="table-container"] {
+  border: 0;
+  border-radius: 24px;
+  background: #faf6f4;
+  box-shadow: none;
+}
+html [data-slot="table-header"] {
+  background: transparent;
+}
+html [data-slot="table-row"],
+html .sp-v7 [data-slot="table-row"] {
+  border-color: #e8dfe1;
+}
+html [data-slot="table-row"]:hover,
+html.theme-customer [data-slot="table-row"]:hover {
+  background: #f7edf0;
+}
+
+/* ---- dialogs, sheets, menus: solid white, large radius, one soft shadow ---- */
+html [data-slot="dialog-content"],
+html [data-slot="sheet-content"],
+html [data-slot="popover-content"],
+html [data-slot="dropdown-menu-content"],
+html [data-slot="select-content"],
+html.theme-customer [data-slot="dialog-content"],
+html.theme-customer [data-slot="sheet-content"],
+html.theme-customer [data-slot="popover-content"],
+html.theme-customer [data-slot="dropdown-menu-content"],
+html.theme-customer [data-slot="select-content"] {
+  background: #ffffff !important;
+  border: 0 !important;
+  border-radius: 28px;
+  box-shadow: 0 18px 48px rgba(41, 33, 36, 0.18) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+html [data-slot="dialog-overlay"],
+html [data-slot="sheet-overlay"] {
+  background: rgba(41, 33, 36, 0.5);
+  backdrop-filter: none;
+}
+html [data-slot="select-item"][data-highlighted],
+html [data-slot="dropdown-menu-item"][data-highlighted] {
+  background: #f7edf0;
+  color: #292124;
+}
+
+/* ---- marketplace ---- */
+html .sp-market-toolbar,
+html .sp-v7 .sp-market-toolbar,
+html.theme-customer .sp-v7 .sp-market-toolbar {
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: 0 1px 0 #e8dfe1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+html .sp-product-card,
+html .sp-v7 .sp-product-card,
+html.theme-customer .sp-v7 .sp-product-card {
+  border: 0 !important;
+  background: #faf6f4 !important;
+  box-shadow: none !important;
+  border-radius: 24px;
+}
+html .sp-product-card:hover,
+html.theme-customer .sp-product-card:hover {
+  transform: none;
+  box-shadow: inset 0 0 0 2px #753b50 !important;
+  border-color: transparent;
+}
+html .sp-product-image,
+html .sp-v7 .sp-product-image,
+html.theme-customer .sp-product-image,
+html.theme-customer .sp-v7 .sp-product-image {
+  background: #f7edf0 !important;
+  border-radius: 20px;
+}
+html .sp-filter-drawer {
+  background: #ffffff;
+  border: 0;
+}
+html .sp-v7 .sp-category-chip,
+html.theme-customer .sp-v7 .sp-category-chip {
+  border: 0 !important;
+  background: #faf6f4 !important;
+  border-radius: 999px;
+}
+
+/* ---- She Agent and entry hero ---- */
+html .sp-ai-card,
+html .sp-v7 .sp-ai-card,
+html.theme-customer .sp-ai-card,
+html.theme-customer .sp-v7 .sp-ai-card {
+  background: #292124 !important;
+  border: 0 !important;
+  color: #ffffff;
+}
+html .sp-agent-orb,
+html.theme-customer .sp-agent-orb,
+html .sp-agent-launcher > span:first-child,
+html.theme-customer .sp-agent-launcher > span:first-child {
+  background: #753b50 !important;
+  color: var(--on-brand) !important;
+  box-shadow: none !important;
+}
+html .sp-agent-orb-status,
+html.theme-customer .sp-agent-orb-status {
+  background: #26834a;
+  box-shadow: none;
+}
+html .sp-agent-panel,
+html.theme-customer .sp-agent-panel {
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: 0 18px 48px rgba(41, 33, 36, 0.18) !important;
+  backdrop-filter: none !important;
+}
+html .sp-agent-panel > div:first-child,
+html.theme-customer .sp-agent-panel > div:first-child {
+  background: #292124 !important;
+}
+html .sp-entry-hero,
+html.theme-customer .sp-entry-hero {
+  background: #f7edf0 !important;
+  border: 0;
+}
+html .sp-entry-ambient-a,
+html .sp-entry-ambient-b,
+html .sp-entry-visual-glow,
+html.theme-customer .sp-entry-ambient-a,
+html.theme-customer .sp-entry-ambient-b,
+html.theme-customer .sp-entry-visual-glow {
+  background: transparent;
+  filter: none;
+}
+html .sp-entry-kicker,
+html.theme-customer .sp-entry-kicker {
+  border: 0;
+  background: #e8cbd5;
+  color: #653046;
+}
+html .sp-entry-search,
+html.theme-customer .sp-entry-search {
+  border: 0 !important;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: none !important;
+}
+html .sp-entry-category,
+html .sp-entry-plan-card,
+html .sp-entry-trust-card,
+html .sp-entry-popular-chip,
+html .sp-entry-feature-agent,
+html.theme-customer .sp-entry-category,
+html.theme-customer .sp-entry-plan-card,
+html.theme-customer .sp-entry-trust-card,
+html.theme-customer .sp-entry-popular-chip,
+html.theme-customer .sp-entry-feature-agent {
+  border: 0;
+  background: #faf6f4;
+  box-shadow: none;
+}
+html .sp-entry-category.is-active,
+html.theme-customer .sp-entry-category.is-active {
+  background: #f7edf0;
+  box-shadow: inset 0 0 0 2px #753b50;
+}
+html .sp-entry-visual,
+html .sp-entry-visual-card,
+html .sp-entry-visual-top,
+html.theme-customer .sp-entry-visual,
+html.theme-customer .sp-entry-visual-card,
+html.theme-customer .sp-entry-visual-top {
+  box-shadow: none;
+}
+html .sp-entry-visual::after {
+  background: none;
+}
+html .sp-entry .sp-entry-header,
+html .sp-entry-footer,
+html.theme-customer .sp-entry .sp-entry-header,
+html.theme-customer .sp-entry-footer {
+  border-color: #e8dfe1 !important;
+}
+html .sp-auth-dialog .sp-auth-hero,
+html.theme-customer .sp-auth-dialog .sp-auth-hero {
+  background: #f7edf0 !important;
+  border-bottom: 0;
+}
+
+/* ---- maps ---- */
+html .sp-vendor-map,
+html.theme-customer .sp-vendor-map {
+  box-shadow: none;
+  border-radius: 24px;
+}
+html .sp-vendor-map .leaflet-container,
+html.theme-customer .sp-vendor-map .leaflet-container {
+  background: #faf6f4;
+}
+html .sp-map-you-dot,
+html.theme-customer .sp-map-you-dot {
+  background: #753b50;
+  box-shadow: 0 2px 8px rgba(41, 33, 36, 0.3); color: var(--on-brand); }
+html .sp-map-you-pulse,
+html.theme-customer .sp-map-you-pulse {
+  background: rgba(117, 59, 80, 0.28);
+}
+html .sp-map-vendor-pin,
+html.theme-customer .sp-map-vendor-pin {
+  border: 2px solid #753b50;
+}
+html .sp-map-vendor-closest .sp-map-vendor-pin,
+html.theme-customer .sp-map-vendor-closest .sp-map-vendor-pin {
+  border-color: #292124;
+}
+html .sp-map-vendor-ring,
+html.theme-customer .sp-map-vendor-ring {
+  border: 2px solid rgba(41, 33, 36, 0.4);
+}
+html .sp-map-handle,
+html.theme-customer .sp-map-handle {
+  border: 3px solid #753b50;
+}
+
+/* ---- loose utility sweeps ---- */
+html [class*="backdrop-blur"] {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* ---- stock Tailwind palettes re-pointed at the kit, so existing utility classes follow the new look ---- */
+:root {
+  --color-stone-50: #faf6f4; --color-stone-100: #faf6f4; --color-stone-200: #e8dfe1; --color-stone-300: #d8cfd2;
+  --color-stone-400: #766b70; --color-stone-500: #71676b; --color-stone-600: #4c4246; --color-stone-700: #3a3034;
+  --color-stone-800: #382d32; --color-stone-900: #292124; --color-stone-950: #292124;
+  --color-emerald-50: #eaf5ec; --color-emerald-100: #eaf5ec; --color-emerald-200: #cde6d3; --color-emerald-500: #26834a;
+  --color-emerald-600: #21683b; --color-emerald-700: #21683b; --color-emerald-800: #1b5a33; --color-emerald-900: #392c30;
+  --color-green-50: #eaf5ec; --color-green-100: #eaf5ec; --color-green-500: #26834a; --color-green-600: #21683b; --color-green-700: #21683b;
+  --color-amber-50: #fff4cf; --color-amber-100: #fff4cf; --color-amber-200: #ffe58a; --color-amber-500: #ffca2c;
+  --color-amber-600: #795900; --color-amber-700: #795900; --color-amber-800: #6b4f00; --color-amber-900: #5c4300;
+  --color-red-50: #fdecef; --color-red-100: #fdecef; --color-red-200: #f0c3c9; --color-red-500: #d63a4a;
+  --color-red-600: #b42332; --color-red-700: #b42332; --color-red-800: #8f1c29;
+  --color-sky-50: #edf3fd; --color-sky-100: #edf3fd; --color-sky-200: #cbdaf3; --color-sky-700: #285fba; --color-sky-800: #285fba; --color-sky-900: #1f4f9e;
+  --color-violet-50: #f7edf0; --color-violet-100: #f7edf0; --color-violet-200: #e8cbd5; --color-violet-700: #653046; --color-violet-800: #4f2438;
+  --color-orange-50: #f7edf0; --color-orange-100: #efd9e0; --color-orange-200: #e8cbd5; --color-orange-500: #753b50; --color-orange-600: #602d40; --color-orange-700: #653046;
+  --color-rose-50: #f7edf0; --color-rose-100: #efd9e0; --color-rose-500: #753b50; --color-rose-600: #602d40; --color-rose-700: #653046;
+  --color-lime-50: #f7edf0; --color-lime-500: #753b50; --color-lime-600: #602d40; --color-lime-700: #653046;
+}
